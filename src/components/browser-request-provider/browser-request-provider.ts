@@ -1,6 +1,7 @@
 import { RequestProviderResponse } from '@eigenspace/base-http-client';
 import { RequestProvider, RequestProviderOptions } from '@eigenspace/base-http-client/types/request-provider';
 import { BrowserProviderResponse } from '../browser-provider-response/browser-provider-response';
+import { HttpError } from '../../entities/http-error/http-error';
 
 export class BrowserRequestProvider implements RequestProvider<Response> {
 
@@ -10,7 +11,7 @@ export class BrowserRequestProvider implements RequestProvider<Response> {
         const response = await fetch(url, options);
 
         if (!response.ok) {
-            throw new Error(response.statusText);
+            throw new HttpError(response.status, response.statusText);
         }
 
         return new BrowserProviderResponse(response);
