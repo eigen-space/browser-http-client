@@ -1,7 +1,6 @@
-import { RequestProviderResponse } from '@eigenspace/base-http-client';
+import { HttpError, RequestProviderResponse } from '@eigenspace/base-http-client';
 import { RequestProvider, RequestProviderOptions } from '@eigenspace/base-http-client/types/request-provider';
 import { BrowserProviderResponse } from '../browser-provider-response/browser-provider-response';
-import { HttpError } from '../../entities/http-error/http-error';
 
 export class BrowserRequestProvider implements RequestProvider<Response> {
 
