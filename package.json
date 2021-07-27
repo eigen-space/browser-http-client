@@ -44,7 +44,7 @@
         ]
     },
     "dependencies": {
-        "@eigenspace/base-http-client": "1.0.8"
+        "@eigenspace/base-http-client": "1.0.15"
     },
     "devDependencies": {
         "@eigenspace/codestyle": "latest",

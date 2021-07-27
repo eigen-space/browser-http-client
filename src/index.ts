@@ -3,6 +3,5 @@ export {
     CommonQueryProps,
     QueryProvider,
     BaseHttpClientDecorator,
-    UrlReplacer,
     UrlProcessor
 } from '@eigenspace/base-http-client';
