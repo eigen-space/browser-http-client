@@ -4,7 +4,7 @@ import { BrowserProviderResponse } from '../browser-provider-response/browser-pr
 
 export class BrowserRequestProvider implements RequestProvider<Response> {
 
-    async fetch<T>(url: string, options: RequestProviderOptions): Promise<RequestProviderResponse<Response, T>> {
+    async fetch<T>(url: string, options: RequestProviderOptions): Promise<RequestProviderResponse<T, Response>> {
         // TODO: fix body type later
         // @ts-ignore
         const response = await fetch(url, options);

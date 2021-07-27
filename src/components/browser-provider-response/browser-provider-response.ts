@@ -1,6 +1,6 @@
-import { ContentType, HttpStatusCode, RequestProviderResponse } from '@eigenspace/base-http-client';
+import { ContentType, HttpStatusCode, RequestProviderResponse, StreamObserver } from '@eigenspace/base-http-client';
 
-export class BrowserProviderResponse<T> extends RequestProviderResponse<Response, T> {
+export class BrowserProviderResponse<T> extends RequestProviderResponse<T, Response> {
 
     get status(): HttpStatusCode | number {
         return this.nativeResponse.status;
@@ -12,5 +12,13 @@ export class BrowserProviderResponse<T> extends RequestProviderResponse<Response
 
     protected json(): Promise<T> {
         return this.nativeResponse.json();
+    }
+
+    protected blob(): Promise<Blob> {
+        return this.nativeResponse.blob();
+    }
+
+    protected observer(): Promise<StreamObserver<T>> {
+        throw new Error('Not implemented yet');
     }
 }
