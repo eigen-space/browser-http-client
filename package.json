@@ -1,6 +1,6 @@
 {
     "name": "@eigenspace/browser-http-client",
-    "version": "1.0.5",
+    "version": "1.0.5-sch",
     "license": "UNLICENSED",
     "description": "The adaptor for base http client",
     "main": "index.js",
@@ -44,7 +44,7 @@
         ]
     },
     "dependencies": {
-        "@eigenspace/base-http-client": "1.0.8"
+        "@eigenspace/base-http-client": "1.0.9-sch"
     },
     "devDependencies": {
         "@eigenspace/codestyle": "latest",

@@ -10,7 +10,8 @@ export class BrowserRequestProvider implements RequestProvider<Response> {
         const response = await fetch(url, options);
 
         if (!response.ok) {
-            throw new HttpError(response.status, response.statusText);
+            const body = await response.json();
+            throw new HttpError(response.status, response.statusText, body);
         }
 
         return new BrowserProviderResponse(response);
